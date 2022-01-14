@@ -7,10 +7,14 @@ returns the sum of said arguments. Prototype => ``def add_integer(a, b=98):``
 Both arguments (a and b) must be integers or floats (the floats must be casted to ints).
 Argument b is given a default value of 98. The return value must be an integer.
 
+Import module
+=============
+::
+    >>> add_integer = __import__('0-add_integer').add_integer
+
 Returns the correct answer if inputs abide the rules.
 -----------------------------------------------------
 ::
-    >>> add_integer = __import__('0-add_integer').add_integer
     >>> add_integer(2, 3)
     5
     >>> add_integer(2, -3)
