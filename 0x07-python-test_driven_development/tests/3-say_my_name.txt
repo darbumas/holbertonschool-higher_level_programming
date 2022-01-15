@@ -1,0 +1,49 @@
+====================================
+Unittest for module 3-say_my_name.py
+====================================
+
+Module ``3-say_my_name.py`` defines a function ``say_my_name()`` with two parameter arguments.
+Prototype => def say_my_name(first_name, last_name=""):
+The expected first and second argument are of type string. The second argument is given as arguments
+default empty string.
+The function will print any strings given as first or second string in form of
+"My name is <first name> <last name>". There must be at least one string passed as parameter.
+
+Import module
+=============
+::
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Correct output if inputs abide the rules
+----------------------------------------
+::
+    >>> say_my_name("MLK day is on", "the 17th of Jan")
+    My name is MLK day is on the 17th of Jan
+
+    >>> say_my_name("17th of Jan", "is MLK day")
+    My name is 17th of Jan is MLK day
+
+    >>> say_my_name("King")
+    My name is King
+
+Rule violations that should NOT work
+------------------------------------
+Calling the function without any arguments
+::
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Should not be passing any other data type than string
+::
+    >>> say_my_name("MLK day is on the", 17)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(17, "of January is MLK day")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name({17: 'MLK'})
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
