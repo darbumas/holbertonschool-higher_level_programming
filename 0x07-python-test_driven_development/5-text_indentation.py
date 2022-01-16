@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module defines a function ``text_indentation(text)`` which prints a text with
+"""Module defines a function ``text_indentation(text)`` which prints a text w/
 2 new lines after each of these characters: . ? and :
 The argument (text) has to be a string, otherwise raise a TypeError exception
 message.
