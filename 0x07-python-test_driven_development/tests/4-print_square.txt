@@ -1,14 +1,13 @@
-====================================
-Unittest for module 3-say_my_name.py
-====================================
+=====================================
+Unittest for module 4-print_square.py
+=====================================
 
 Module ``4-print_square`` defines a function ``print_square()`` that prints a square
 with the character '#' with one parameter argument.
 Prototype => def print_square(size):
 The expected argument (size) has to be of type integer otherwise raise an ValueError
 exception message; size must be a positive integer or zero. If size is float and is less
-than 0, then raise a TypeError
-default empty string
+than 0, then raise a TypeError exception message.
 
 Import module
 =============
