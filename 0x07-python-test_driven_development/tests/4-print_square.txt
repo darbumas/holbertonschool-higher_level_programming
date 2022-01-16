@@ -1,0 +1,65 @@
+====================================
+Unittest for module 3-say_my_name.py
+====================================
+
+Module ``4-print_square`` defines a function ``print_square()`` that prints a square
+with the character '#' with one parameter argument.
+Prototype => def print_square(size):
+The expected argument (size) has to be of type integer otherwise raise an ValueError
+exception message; size must be a positive integer or zero. If size is float and is less
+than 0, then raise a TypeError
+default empty string
+
+Import module
+=============
+::
+    >>> print_square = __import__('4-print_square').print_square
+
+Correct output if inputs abide the rules
+----------------------------------------
+::
+    >>> print_square(2)
+    ##
+    ##
+
+    >>> print_square(0)
+
+Rule violations that should NOT work
+------------------------------------
+Passing a negative value
+::
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Passing a float
+::
+    >>> print_square(2.2)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Passing a negative float value
+::
+    >>> print_square(-2.2)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Passing anything that's not an integer
+::
+    >>> print_square([2])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square({1: "string"})
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square("string")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Passing more than one argument
+::
+    >>> print_square(2, 2)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
