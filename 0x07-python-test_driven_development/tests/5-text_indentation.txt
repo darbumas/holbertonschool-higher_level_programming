@@ -1,0 +1,55 @@
+=========================================
+Unittest for module 5-text_indentation.py
+=========================================
+
+Module ``5-text_indentation.py`` defines a function ``text_indentation()``
+that prints a text with 2 new lines after each of these characters: . ? :
+Prototype => def text_indentation(text):
+The expected argument (text) must be a string, otherwise raise an TypeError
+exception message.
+
+Import module
+=============
+::
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Correct output if inputs abide the rules
+----------------------------------------
+::
+    >>> text_indentation("Is it possible? Real programmers shift bits: indivividually with a magnet.")
+    Is it possible?
+    <BLANKLINE>
+    Real programmers shift bits:
+    <BLANKLINE>
+    indivividually with a magnet.
+    <BLANKLINE>
+
+    >>> text_indentation("[1, 2, 3] is a list.")
+    [1, 2, 3] is a list.
+    <BLANKLINE>
+
+    >>> text_indentation("      empty spaces")
+    empty spaces
+
+    >>> text_indentation("  empty: spaces.    ")
+    empty:
+    <BLANKLINE>
+    spaces.
+    <BLANKLINE>
+
+    >>> text_indentation("\n\n New line\n")
+    <BLANKLINE>
+    <BLANKLINE>
+     New line
+
+Rule violations that should NOT work
+------------------------------------
+Passing something that's not a string
+::
+    >>> text_indentation([1, 3, 4])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(7)
+    Traceback (most recent call last):
+    TypeError: text must be a string
