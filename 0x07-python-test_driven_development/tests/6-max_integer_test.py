@@ -12,6 +12,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-2, -1]), -1)
         self.assertEqual(max_integer([0, -4, -2]), 0)
         self.assertEqual(max_integer([-1, -2, -4]), -1)
+        self.assertEqual(max_integer([11]), 11)
 
     def test_type(self):
         """test for data type"""
