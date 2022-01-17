@@ -8,7 +8,8 @@ exception message.
 
 
 def print_square(size):
-    """ Prints a square with the character '#' if `size` is a positive integer"""
+    """ Prints a square with the character '#' if `size` is a positive integer
+    """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
