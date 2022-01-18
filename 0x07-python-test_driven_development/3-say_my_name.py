@@ -6,9 +6,6 @@ that in calling the function, there must be at least one argument provided.
 """
 
 
-from logging import lastResort
-
-
 def say_my_name(first_name, last_name=""):
     """ prints the value of ``first_name`` and ``last_name`` if and only if
     they are strings. Second argument is optional
