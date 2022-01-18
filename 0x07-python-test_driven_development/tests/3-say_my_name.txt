@@ -23,6 +23,9 @@ Correct output if inputs abide the rules
     >>> say_my_name("17th of Jan", "is MLK day")
     My name is 17th of Jan is MLK day
 
+    >>> say_my_name("Martin")
+    My name is Martin 
+
 Rule violations that should NOT work
 ------------------------------------
 Calling the function without any arguments
