@@ -1,0 +1,72 @@
+=================================
+Unit test for module 1-my_list.py
+=================================
+
+Import module
+=============
+::
+    >>> MyList = __import__('1-my_list').MyList
+
+Expected output with valid input
+--------------------------------
+Passing an empty list
+::
+    >>> a_list = MyList()
+    >>> a_list.print_sorted()
+    []
+
+Passing strings
+::
+    >>> a_list = MyList('h')
+    >>> a_list.print_sorted()
+    ['h']
+
+    >>> a_list = MyList('Holberton')
+    >>> a_list.print_sorted()
+    ['H', 'b', 'e', 'l', 'n', 'o', 'o', 'r', 't']
+
+Passing integers
+::
+    >>> a_list = MyList([4, 3, 5, 1, 2])
+    >>> a_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> a_list = MyList([1])
+
+Appending elements to the list
+::
+    >>> a_list = MyList()
+    >>> a_list.append(3)
+    >>> a_list.append(5)
+    >>> a_list.append(4)
+    >>> a_list.append(1)
+    >>> a_list.append(2)
+    >>> a_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Compare orignal list to sorted list
+::
+    >>> print(a_list)
+    [3, 5, 4, 1, 2]
+    >>> a_list == MyList.print_sorted(a_list)
+    [1, 2, 3, 4, 5]
+    False
+
+Passing a list of lists
+::
+    >>> a_list = MyList([[2, 11, 10], [3, 5, 2], [4, 1, 0]])
+    >>> a_list.print_sorted()
+    [[2, 11, 10], [3, 5, 2], [4, 1, 0]]
+
+Expected output with invalid input
+----------------------------------
+Passing anything that's not a list
+::
+    >>> a_list = MyList(1)
+    Traceback (most recent call last):
+    TypeError: 'int' object is not iterable
+
+    >>> a_list = MyList(1, 2, 3)
+    Traceback (most recent call last):
+    TypeError: list expected at most 1 argument, got 3
+
