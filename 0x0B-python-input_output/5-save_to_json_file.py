@@ -4,8 +4,6 @@ JSON representation"""
 
 import json
 
-from isort import file
-
 
 def save_to_json_file(my_obj, filename):
     """Writes to a file a JSON representation of an object"""
