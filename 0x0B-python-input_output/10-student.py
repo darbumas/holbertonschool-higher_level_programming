@@ -2,10 +2,6 @@
 """Module creates a class ``Student``"""
 
 
-from configparser import NoOptionError
-from webbrowser import get
-
-
 class Student:
     """Class with public attributes:
         1. first_name
