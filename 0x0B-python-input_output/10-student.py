@@ -3,6 +3,7 @@
 
 
 from configparser import NoOptionError
+from webbrowser import get
 
 
 class Student:
@@ -19,10 +20,10 @@ class Student:
 
     def to_json(self, attrs=None):
         """Retrieves a dictionary representation of the class instance."""
-        if attrs is None:
-            return self.__dict__
-        attributes = {}
-        for key, val in self.__dict__.items():
-            if key in attrs:
-                attributes[key] = val
-        return attributes
+        if isinstance(attrs, list):
+            my_dict = {}
+            for i in attrs:
+                if hasattr(self, i):
+                    my_dict[i] = getattr(self, i)
+            return my_dict
+        return self.__dict__
