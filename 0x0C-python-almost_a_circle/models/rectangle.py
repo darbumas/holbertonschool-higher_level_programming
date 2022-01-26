@@ -99,4 +99,3 @@ class Rectangle(Base):
         for i in range(len(args)):
             setattr(self, attrs[arg_idx], args[arg_idx])
             arg_idx += 1
-
