@@ -2,6 +2,7 @@
 """Module creates a class ``Rectangle`` derived fom parent
 class ``Base``."""
 
+from lib2to3.pytree import type_repr
 from models.base import Base
 
 
@@ -23,6 +24,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, val):
         """public setter method for width"""
+        if not isinstance(val, int):
+            raise TypeError("width must be an integer")
+        if val <= 0:
+            raise ValueError("width must be > 0")
         self.__width = val
 
     @property
@@ -33,6 +38,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, val):
         """public setter method for height"""
+        if not isinstance(val, int):
+            raise TypeError("height must be an integer")
+        if val <= 0:
+            raise ValueError("height must be > 0")
         self.__height = val
 
     @property
@@ -43,6 +52,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, val):
         """public setter method for x"""
+        if not isinstance(val, int):
+            raise TypeError("x must be an integer")
+        if val < 0:
+            raise ValueError("x must be >= 0")
         self.__x = val
 
     @property
@@ -53,4 +66,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, val):
         """public setter methode for y"""
+        if not isinstance(val, int):
+            raise TypeError("y must be an integer")
+        if val < 0:
+            raise ValueError("y must be >= 0")
         self.__y = val
