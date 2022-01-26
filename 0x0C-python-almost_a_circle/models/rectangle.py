@@ -82,3 +82,10 @@ class Rectangle(Base):
             for x in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """overides the builtin "__str__" method for a nicer representation
+        of the ``Rectangle`` instance"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                       self.__y, self.__width,
+                                                       self.__height)
