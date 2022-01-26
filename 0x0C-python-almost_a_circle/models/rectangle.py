@@ -80,7 +80,7 @@ class Rectangle(Base):
         with "#" characters."""
         print("\n" * self.__y, end="")
         for y in range(self.__height):
-            print(" "* self.__x, end="")
+            print(" " * self.__x, end="")
             for x in range(self.__width):
                 print("#", end="")
             print()
@@ -91,3 +91,6 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
+
+    def update(self):
+        """public method assigns argument to each instance attribute"""
