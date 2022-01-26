@@ -2,7 +2,6 @@
 """Module creates a class ``Rectangle`` derived fom parent
 class ``Base``."""
 
-from lib2to3.pytree import type_repr
 from models.base import Base
 
 
