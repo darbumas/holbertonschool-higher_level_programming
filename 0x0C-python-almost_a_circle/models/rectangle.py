@@ -74,3 +74,11 @@ class Rectangle(Base):
     def area(self):
         """public method returns the area of the ``Rectangle`` instance"""
         return self.__width * self.__height
+
+    def display(self):
+        """public method that prints to stdout the ``Rectangle instance``
+        with "#" characters."""
+        for y in range(self.__height):
+            for x in range(self.__width):
+                print("#", end="")
+            print()
