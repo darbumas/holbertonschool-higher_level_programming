@@ -10,10 +10,26 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """class constructor"""
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         """overides the builtin "__str__" method for a nicer representation
         of the ``Square`` instance"""
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                                              self.id, self.x,
-                                             self.y, self.height)
+                                             self.y, self.__height)
+
+    @property
+    def size(self):
+        """public getter method for size"""
+        return self.__width
+
+    @size.setter
+    def size(self, val):
+        """public setter method for size"""
+        if not isinstance(val, int):
+            raise TypeError("width must be an integer")
+        if val <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = val
+        self.__height = val
