@@ -92,5 +92,11 @@ class Rectangle(Base):
                                                        self.__y, self.__width,
                                                        self.__height)
 
-    def update(self):
+    def update(self, *args):
         """public method assigns argument to each instance attribute"""
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        arg_idx = 0
+        for i in range(len(args)):
+            setattr(self, attrs[arg_idx], args[arg_idx])
+            arg_idx += 1
+
