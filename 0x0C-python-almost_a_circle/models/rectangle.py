@@ -92,10 +92,17 @@ class Rectangle(Base):
                                                        self.__y, self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """public method assigns argument to each instance attribute"""
         attrs = ['id', 'width', 'height', 'x', 'y']
         arg_idx = 0
-        for i in range(len(args)):
-            setattr(self, attrs[arg_idx], args[arg_idx])
-            arg_idx += 1
+        """if args is not empty, skip kwargs"""
+        if len(args) > 0:
+            for i in range(len(args)):
+                setattr(self, attrs[arg_idx], args[arg_idx])
+                arg_idx += 1
+
+        for key, value in kwargs.items():
+            for i in range(len(attrs)):
+                if key == attrs[i]:
+                    setattr(self, attrs[i], value)
