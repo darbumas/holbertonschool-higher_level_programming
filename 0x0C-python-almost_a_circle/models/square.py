@@ -43,3 +43,8 @@ class Square(Rectangle):
         attrs = ['id', 'size', 'x', 'y']
         for i in range(len(args)):
             setattr(self, attrs[i], args[i])
+
+    def to_dictionary(self):
+        """public method returns the dictionary representation of a
+        square"""
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
