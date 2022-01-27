@@ -38,3 +38,10 @@ class Base:
                 obj_list.append(cls.to_dictionary(obj))
         with open(filename, mode="w", encoding="utf-8") as myFile:
             myFile.write(cls.to_json_string(obj_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """static method returns a list of the JSON string representation"""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
