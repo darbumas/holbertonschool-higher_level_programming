@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module creates a class ``Base``."""
 
-from fileinput import filename
+from os import path
 import json
 
 
@@ -56,3 +56,14 @@ class Base:
             new_instance = cls(1, 1)
         cls.update(new_instance, **dictionary)
         return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """class method returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        inst_list = []
+        if path.isfile(filename):
+            with open(filename, mode="r", encoding="utf-8") as myFile:
+                inst_list = cls.from_json_string(myFile.read())
+            return [cls.create(**obj) for obj in inst_list]
+        return inst_list
