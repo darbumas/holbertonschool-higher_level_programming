@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module creates a class ``Base``."""
 
+from fileinput import filename
 import json
 
 
@@ -25,3 +26,15 @@ class Base:
         if not list_dictionaries or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """class method that writes JSON string representation of list_objs
+         to a file"""
+        filename = cls.__name__ + ".json"
+        obj_list = []
+        if list_objs is not None:
+            for obj in list_objs:
+                obj_list.append(cls.to_dictionary(obj))
+        with open(filename, mode="w", encoding="utf-8") as myFile:
+            myFile.write(cls.to_json_string(obj_list))
