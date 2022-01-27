@@ -106,3 +106,9 @@ class Rectangle(Base):
             for i in range(len(attrs)):
                 if key == attrs[i]:
                     setattr(self, attrs[i], value)
+
+    def to_dictionary(self):
+        """public method returns the dictionary representation of a
+        rectangle instance."""
+        return{"id": self.id, "width": self.__width, "height": self.__height,
+               "x": self.__x, "y": self.__y}
