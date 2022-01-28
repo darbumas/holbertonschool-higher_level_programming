@@ -91,7 +91,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(instance_id.__str__(), "[Rectangle] (9) 3/1 - 5/2")
 
     def test_update_args(self):
-        """test public method that updates the class"""
+        """test public method that updates the class with *args"""
         Base._Base__nb_objects = 0
 
         obj = Rectangle(87, 9, 3, 11, 5)
@@ -108,6 +108,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(obj.__str__(), "[Rectangle] (-1) 5/5 - 2/3")
 
     def test_update_kwargs(self):
+        """test public method that updates the class with **kwargs"""
         Base._Base__nb_objects = 0
 
         obj = Rectangle(87, 9, 3, 11, 5)
