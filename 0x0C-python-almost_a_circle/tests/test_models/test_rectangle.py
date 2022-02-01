@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Unit test module for ``Rectangle`` class"""
 
-import pep8
 from models.rectangle import Rectangle
 from models.base import Base
 import unittest
 from io import StringIO
 import sys
+from sys import path
 
 
 class Test_Rectangle(unittest.TestCase):
@@ -122,6 +122,13 @@ class Test_Rectangle(unittest.TestCase):
         obj.update(height=15, x=7, id=9)
         self.assertEqual(obj.__str__(), "[Rectangle] (9) 7/0 - 55/15")
 
+    def test_to_dictionary(self):
+        """test to_dictionary for rectangle"""
+        Base._Base__nb_objects = 0
+
+        obj = Rectangle(4, 3)
+        rect = Rectangle.create(**obj.to_dictionary())
+        self.assertEqual(obj.to_dictionary(), rect.to_dictionary())
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Unit test module for ``Square`` class."""
 
-from re import S
 import unittest
 from models.square import Square
 from models.base import Base
