@@ -1,0 +1,2 @@
+-- updates table 'second_table' by removing records where score <= 5
+DELETE FROM second_table WHERE score <= 5;
