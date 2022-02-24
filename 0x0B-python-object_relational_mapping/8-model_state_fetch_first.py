@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Uses ORM sqlalchemy to print the first State object from db hbtn_0e_6_usa"""
+
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -20,8 +21,6 @@ def main():
         print(f'{state.id}: {state.name}')
     else:
         print('Nothing')
-    session.close()
 
 if __name__ == "__main__":
     main()
-

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Uses ORM sqlalchemy to list all State objects from db hbtn_0e_6_usa"""
+
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -17,7 +18,6 @@ def main():
     session = Session()
     for state in session.query(State).order_by(State.id).all():
         print(f'{state.id}: {state.name}')
-    session.close()
 
 if __name__ == "__main__":
     main()
