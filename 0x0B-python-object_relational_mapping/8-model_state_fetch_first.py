@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Uses ORM sqlalchemy to print the first State object from db hbtn_0e_6_usa"""
+"""
+    prints the first State object from db hbtn_0e_6_usa
+"""
 
 from sys import argv
 from model_state import Base, State
