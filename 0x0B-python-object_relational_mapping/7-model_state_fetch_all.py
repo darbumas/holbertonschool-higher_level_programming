@@ -6,8 +6,7 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-
-def main():
+if __name__ == "__main__":
     '''should not execute when imported'''
 
     engine = create_engine(
@@ -18,6 +17,4 @@ def main():
     session = Session()
     for state in session.query(State).order_by(State.id).all():
         print(f'{state.id}: {state.name}')
-
-if __name__ == "__main__":
-    main()
+    session.close()
