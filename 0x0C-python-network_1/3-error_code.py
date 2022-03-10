@@ -7,10 +7,7 @@ import urllib.request
 
 if __name__ == "__main__":
     try:
-        with urllib.request.urlopen(argv[1]) as res:
-            response = res.read()
-        print(response.decode('utf-8'))
+        with urllib.request.urlopen(argv[1]) as response:
+            print(response.read().decode("UTF-8"))
     except urllib.error.HTTPError as e:
-        print(f"Error code: {e.code}")
-    except urllib.error.URLError as e:
-        print(f"Error code: {e.reason}")
+        print(f"Error code: {e.status}")
