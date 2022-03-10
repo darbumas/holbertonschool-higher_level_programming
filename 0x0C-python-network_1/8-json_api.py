@@ -12,8 +12,8 @@ if __name__ == "__main__":
     else:
         inpt = {'q': ""}
 
-    try
-        resp = requests.post(url, inpt)
+    resp = requests.post(url, inpt)
+    try:
         obj = resp.json()
         if len(obj) > 0:
             print("[{}] {}".format(obj['id'], obj['name']))
